@@ -1,8 +1,11 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignUpScreen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <!-- Username TextInputLayout -->
     <com.google.android.material.textfield.TextInputLayout
@@ -82,6 +85,8 @@
         android:layout_marginEnd="32dp"
         android:hint="Phone Number"
         app:endIconMode="clear_text"
+        app:counterMaxLength="10"
+        app:counterEnabled="true"
         app:helperText="Required*"
         app:helperTextTextColor="@color/red"
         app:startIconDrawable="@drawable/person">
@@ -89,7 +94,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numberinput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password TextInputLayout -->
@@ -103,8 +109,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="Password"
-        app:counterMaxLength="10"
-        app:counterEnabled="true"
         app:endIconMode="password_toggle"
         app:helperText="Required*"
         app:helperTextTextColor="@color/red"
@@ -114,7 +118,7 @@
             android:id="@+id/passwordinput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Re-enter Password TextInputLayout -->

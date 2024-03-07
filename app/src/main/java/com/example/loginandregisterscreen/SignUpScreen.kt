@@ -1,3 +1,5 @@
+package com.example.loginandregisterscreen
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,11 +32,16 @@ class SignUpScreen : AppCompatActivity() {
             val city = binding.cityinput.text.toString()
             val phone = binding.numberinput.text.toString()
 
-            if (email.isEmpty() || username.isEmpty() || password.isEmpty() || repeatPassword.isEmpty()) {
+            if (email.isEmpty() || username.isEmpty() || password.isEmpty() || repeatPassword.isEmpty() || phone
+                    .isEmpty() || city.isEmpty()) {
                 Toast.makeText(this, "Please Fill All The Details", Toast.LENGTH_SHORT).show()
             } else if (password != repeatPassword) {
                 Toast.makeText(this, "Repeat Password Must Be Same", Toast.LENGTH_SHORT).show()
-            } else {
+            }
+            else if(phone.length!=10){
+                Toast.makeText(this,"Phone Number Must be 10 Digits",Toast.LENGTH_SHORT).show()
+            }
+            else {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {

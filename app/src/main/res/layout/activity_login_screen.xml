@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login"
     tools:context=".LoginScreenActivity">
 
@@ -15,7 +16,8 @@
         android:layout_marginEnd="32dp"
         android:layout_centerVertical="true"
         android:hint="Email Id"
-        android:endIconMode="clear_text">
+        app:endIconMode="clear_text"
+        app:endIconCheckable="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/usernamelogin"
@@ -34,7 +36,8 @@
         android:layout_marginEnd="32dp"
         android:layout_centerVertical="true"
         android:hint="Password"
-        android:endIconMode="password_toggle">
+        app:endIconMode="password_toggle"
+        app:endIconCheckable="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordlogin"
